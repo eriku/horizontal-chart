@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <title>Horizontal Responsive Bar Chart</title>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+  <link href="build/css/reset.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="build/css/horizBarChart.css" media="all" rel="stylesheet" type="text/css" />
+
+  <script src="build/js/application.min.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body>
+  <!-- Module Start -->
+  <div class="chart-horiz">
+    <!-- Graph Left side labels -->
+    <ul class="chart-labels">
+      <li class="title"><span>1 MONTH</span></li>
+      <li><span>Sept 2014</span></li>
+      <li><span>Sept 2013</span></li>
+      <li class="title"><span>12 MONTH</span></li>
+      <li><span>Oct 2013 - Sept 2014</span></li>
+      <li><span>Oct 2012 - Sept 2013</span></li>
+    </ul>
+    <!-- Actual bar chart -->
+    <ul class="chart">
+      <li></li>
+      <!-- jQuery uses .bar.data-number to calculate width -->
+  		<li class="current"><span class="bar" data-number="38000"></span><span class="number">38,000</span></li>
+  		<li class="past"><span class="bar" data-number="28500"></span><span class="number">28,500</span></li>
+  		<li></li>
+  		<li class="current"><span class="bar" data-number="128000"></span><span class="number">128,000</span></li>
+  		<li class="past"><span class="bar" data-number="134000"></span><span class="number">134,000</span></li>
+  	</ul>
+  </div>
+  <!-- Module End -->
+</body>
+</html>

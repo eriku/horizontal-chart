@@ -1,0 +1,26 @@
+{
+  "name": "horiz-bar-chart",
+  "version": "0.1.0",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-cssmin": "~0.6.0",
+    "grunt-contrib-compress": "~0.6.0",
+    "grunt-contrib-watch": "~0.5.2",
+    "jshint-stylish": "~0.4.0",
+    "load-grunt-tasks": "~0.6.0"
+  },
+  "amd": {},
+  "volo": {
+    "baseUrl": "lib",
+    "dependencies": {
+      "jquery": "github:jquery/jquery/1.6.2"
+    }
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
