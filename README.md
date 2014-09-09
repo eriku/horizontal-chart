@@ -6,14 +6,9 @@ The plugin uses the `data-number` attribute for the graph length.
 
 jQuery will then cycle through all the `selector`'s and find the one with the highest number. That number will be used as 100% base point and make the rest of the bars relative to that number.
 
-
----------------------------------------
-
 ## Use
 
 Simplest way to use is create the following markup and just call <code>.horizBarChart()</code> on your containing element.
-
----------------------------------------
 
 ### Markup:
 
@@ -30,8 +25,6 @@ Simplest way to use is create the following markup and just call <code>.horizBar
 $('.chart').horizBarChart();
 ```
 
----------------------------------------
-
 ## Options
 
 You can also adjust the plugin using the following options:
@@ -42,8 +35,6 @@ $('.chart').horizBarChart({
   speed: 3000
 });
 ```
-
----------------------------------------
 
 ## Example
 
