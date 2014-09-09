@@ -44,9 +44,17 @@
 
       <section>
 
+        <p>
+          The plugin uses the <code>data-number</code> attribute for the graph length.<br/>
+          jQuery will then cycle through all the <code>selector</code>'s and find the one with the highest number.<br/>
+          That number will be used as 100% base point and make the rest of the bars relative to that number.
+        </p>
+
         <h2>Use</h2>
+
         <p>Simplest way to use is create the following markup and just call <code>.horizBarChart()</code> on your containing element.</p>
 
+        <h3>Markup</h3>
         <pre>
           <code>
             &lt;ul class="chart"&gt;
@@ -56,11 +64,17 @@
           </code>
         </pre>
 
-        <p>
-          The plugin uses the <code>data-number</code> attribute for the graph length.<br/>
-          jQuery will then cycle through all the <code>selector</code>'s and find the one with the highest number.<br/>
-          That number will be used as 100% base point and make the rest of the bars relative to that number.
-        </p>
+        <h3>Code</h3>
+        <pre>
+          <code>
+            $('.chart').horizBarChart();
+          </code>
+        </pre>
+
+        <hr/>
+
+        <h2>Options</h2>
+
         <p>You can also adjust the plugin using the following options:</p>
 
         <pre><code>
