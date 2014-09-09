@@ -1,5 +1,7 @@
 #Horizontal Responsive Bar Chart
 
+- View on GitHub pages : [http://eriku.github.io/horizontal-chart](http://eriku.github.io/horizontal-chart)
+
 Creates a responsive horizontal bar chart using HTML5, jQuery &amp; CSS
 
 ##Use

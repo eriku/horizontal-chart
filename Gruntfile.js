@@ -49,7 +49,7 @@ module.exports = function(grunt) {
 
     watch: {
       js: {
-        files: ['Gruntfile.js', '<%= concat.build.src %>', '<%= concat.buildFoot.src %>'],
+        files: ['Gruntfile.js', '<%= concat.build.src %>'],
         tasks: ['default']
       }
     }
