@@ -12,7 +12,7 @@ Simplest way to use is create the following markup and just call <code>.horizBar
 
 ### Markup:
 
-```javascript
+```html
 <ul class="chart">
 	<li><span class="bar" data-number="38000"></span><span class="number">38,000</span></li>
 	<li><span class="bar" data-number="134000"></span><span class="number">134,000</span></li>
