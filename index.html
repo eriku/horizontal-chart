@@ -1,42 +1,100 @@
 <!DOCTYPE html>
-<html class="no-js">
-<head>
-  <title>Horizontal Responsive Bar Chart</title>
+<html>
+  <head>
+    <title>Horizontal Responsive Bar Chart</title>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="description" content="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 
-  <link href="build/css/reset.css" media="all" rel="stylesheet" type="text/css" />
-  <link href="build/css/horizBarChart.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="build/css/style.css" media="all" rel="stylesheet" type="text/css" />
 
-  <script src="build/js/application.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="build/js/application.min.js" type="text/javascript" charset="utf-8"></script>
 
-</head>
-<body>
-  <!-- Module Start -->
-  <div class="chart-horiz">
-    <!-- Graph Left side labels -->
-    <ul class="chart-labels">
-      <li class="title"><span>1 MONTH</span></li>
-      <li><span>Sept 2014</span></li>
-      <li><span>Sept 2013</span></li>
-      <li class="title"><span>12 MONTH</span></li>
-      <li><span>Oct 2013 - Sept 2014</span></li>
-      <li><span>Oct 2012 - Sept 2013</span></li>
-    </ul>
-    <!-- Actual bar chart -->
-    <ul class="chart">
-      <li></li>
-      <!-- jQuery uses .bar.data-number to calculate width -->
-  		<li class="current"><span class="bar" data-number="38000"></span><span class="number">38,000</span></li>
-  		<li class="past"><span class="bar" data-number="28500"></span><span class="number">28,500</span></li>
-  		<li></li>
-  		<li class="current"><span class="bar" data-number="128000"></span><span class="number">128,000</span></li>
-  		<li class="past"><span class="bar" data-number="134000"></span><span class="number">134,000</span></li>
-  	</ul>
-  </div>
-  <!-- Module End -->
-</body>
+    <script>
+      $(document).ready(function(){
+        $('.chart').horizBarChart({
+          selector: '.bar',
+          speed: 1000
+        });
+      });
+    </script>
+
+  </head>
+  <body>
+    <div class="wrapper">
+
+
+
+      <header>
+
+        <h1><a href="https://github.com/eriku/horizontal-chart">Responsive Horizontal Bar Chart</a></h1>
+        <p>Creates a responsive horizontal bar chart using HTML5, jQuery &amp; CSS</p>
+        <p class="view"><a href="https://github.com/eriku/horizontal-chart">View the Project on GitHub <small>eriku/horizontal-chart</small></a></p>
+
+        <ul>
+          <li><a href="https://github.com/eriku/horizontal-chart/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/eriku/horizontal-chart/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/eriku/horizontal-chart">View On <strong>GitHub</strong></a></li>
+        </ul>
+
+      </header>
+
+
+
+      <section>
+
+        <h2>Use</h2>
+        <p>Simplest way to use is create the following markup and just call <code>.horizBarChart()</code> on your containing element.</p>
+
+        <pre>
+          <code>
+            &lt;ul class="chart"&gt;
+              &lt;li&gt;&lt;span class="bar" data-number="38000"&gt;&lt;/span&gt;&lt;span class="number"&gt;38,000&lt;/span&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;span class="bar" data-number="134000"&gt;&lt;/span&gt;&lt;span class="number"&gt;134,000&lt;/span&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          </code>
+        </pre>
+
+        <p>
+          The plugin uses the <code>data-number</code> attribute for the graph length.<br/>
+          jQuery will then cycle through all the <code>selector</code>'s and find the one with the highest number.<br/>
+          That number will be used as 100% base point and make the rest of the bars relative to that number.
+        </p>
+        <p>You can also adjust the plugin using the following options:</p>
+
+        <pre><code>
+          $('.chart').horizBarChart({
+            selector: '.bar',
+            speed: 3000
+          });
+        </code></pre>
+
+        <hr/>
+
+        <h2>Example</h2>
+
+        <!-- Code Start -->
+        <div class="chart-horiz clearfix">
+          <!-- Actual bar chart -->
+          <ul class="chart">
+            <li class="title" title="TITLE 1"></li>
+        		<li class="current" title="Label 1"><span class="bar" data-number="38000"></span><span class="number">38,000</span></li>
+        		<li class="past" title="Label 2"><span class="bar" data-number="28500"></span><span class="number">28,500</span></li>
+        		<li class="title" title="TITLE 2"></li>
+        		<li class="current" title="Label 3"><span class="bar" data-number="128000"></span><span class="number">128,000</span></li>
+        		<li class="past" title="Label 4"><span class="bar" data-number="134000"></span><span class="number">134,000</span></li>
+        	</ul>
+        </div>
+        <!-- Code End -->
+
+      </section>
+
+      <footer>
+        <hr/>
+        <p>This project is maintained by <a href="https://github.com/eriku">eriku</a></p>
+      </footer>
+
+    </div>
+  </body>
 </html>

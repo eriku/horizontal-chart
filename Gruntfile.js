@@ -8,7 +8,7 @@ module.exports = function(grunt) {
     concat: {
       build: {
         src: [
-          'src/js/jquery.1.6.2.min.js',
+          'src/js/jquery.min.js',
           'src/js/horizBarChart.js'
         ],
         dest: 'build/js/application.js'
