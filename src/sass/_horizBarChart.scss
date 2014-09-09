@@ -37,11 +37,13 @@
       }
 
       .bar {
+        background: black;
         height: 100%;
         min-width: 164px;
       }
 
       .number {
+        color: black;
         font-size:18px;
         font-weight: bold;
         padding-left: 5px;
@@ -49,21 +51,12 @@
         top: -3px;
       }
 
-      &.current {
-        .bar {
-          background: black;
-        }
-        .number {
-          color: black;
-        }
-      }
-
       &.past {
         .bar {
-          background: #666;
+          background: #aaaaaa;
         }
         .number {
-          color: #666;
+          color: #aaaaaa;
         }
       }
     }
