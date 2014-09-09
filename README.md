@@ -2,6 +2,8 @@
 
 Creates a responsive horizontal bar chart using HTML5, jQuery &amp; CSS
 
+Even works in IE6!!
+
 The plugin uses the `data-number` attribute for the graph length.
 
 jQuery will then cycle through all the `selector`'s and find the one with the highest number. That number will be used as 100% base point and make the rest of the bars relative to that number.
