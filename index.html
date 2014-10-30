@@ -29,15 +29,15 @@
 
       <header>
 
-        <h1><a href="https://github.com/eriku/horizontal-chart">Responsive Horizontal Bar Chart</a></h1>
+        <h1><a href="https://github.com/eriku/horizontal-chart" onclick="trackOutboundLink('https://github.com/eriku/horizontal-chart'); return false;">Responsive Horizontal Bar Chart</a></h1>
         <p>Creates a responsive horizontal bar chart using HTML5, jQuery &amp; CSS</p>
         <p>Even works in IE6!!</p>
-        <p class="view"><a href="https://github.com/eriku/horizontal-chart">View the Project on GitHub <small>eriku/horizontal-chart</small></a></p>
+        <p class="view"><a href="https://github.com/eriku/horizontal-chart" onclick="trackOutboundLink('https://github.com/eriku/horizontal-chart'); return false;">View the Project on GitHub <small>eriku/horizontal-chart</small></a></p>
 
         <ul>
-          <li><a href="https://github.com/eriku/horizontal-chart/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/eriku/horizontal-chart/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/eriku/horizontal-chart">View On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/eriku/horizontal-chart/zipball/master" onclick="trackOutboundLink('https://github.com/eriku/horizontal-chart/zipball/master'); return false;">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/eriku/horizontal-chart/tarball/master" onclick="trackOutboundLink('https://github.com/eriku/horizontal-chart/tarball/master'); return false;">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/eriku/horizontal-chart" onclick="trackOutboundLink('https://github.com/eriku/horizontal-chart'); return false;">View On <strong>GitHub</strong></a></li>
         </ul>
 
       </header>
@@ -108,64 +108,31 @@
 
       <footer>
         <hr/>
-        <p>This project is maintained by <a href="https://github.com/eriku">eriku</a></p>
-        <p><a href="http://erikuunila.com">erikuunila.com</a></p>
+        <p>This project is maintained by <a href="https://github.com/eriku" onclick="trackOutboundLink('https://github.com/eriku'); return false;">eriku</a></p>
+        <p><a href="http://erikuunila.com" onclick="trackOutboundLink('http://erikuunila.com'); return false;">erikuunila.com</a></p>
       </footer>
 
     </div>
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-54600611-1', 'auto');
-  ga('send', 'pageview');
+      ga('create', 'UA-54600611-1', 'auto');
+      ga('send', 'pageview');
 
-</script>
-<script type='text/javascript'>
-  /* Track outbound links in Google Analytics */
-  (function($) {
-
-    "use strict";
-
-    // current page host
-    var baseURI = window.location.host;
-
-    // click event on body
-    $("body").on("click", function(e) {
-
-      // abandon if link already aborted or analytics is not available
-      if (e.isDefaultPrevented() || typeof ga !== "function") return;
-
-      // abandon if no active link or link within domain
-      var link = $(e.target).closest("a");
-      if (link.length != 1 || baseURI == link[0].host) return;
-
-      // cancel event and record outbound link
-      e.preventDefault();
-      var href = link[0].href;
-      ga('send', {
-        'hitType': 'event',
-        'eventCategory': 'outbound',
-        'eventAction': 'link',
-        'eventLabel': href,
-        'hitCallback': loadPage
-      });
-
-      // redirect after one second if recording takes too long
-      setTimeout(loadPage, 1000);
-
-      // redirect to outbound page
-      function loadPage() {
-        document.location = href;
+    </script>
+    <script>
+      var trackOutboundLink = function(url) {
+         ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+           function () {
+           document.location = url;
+           }
+         });
       }
-
-    });
-
-  })(jQuery); // pass another library here if required
-</script>
+    </script>
   </body>
 </html>
