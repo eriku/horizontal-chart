@@ -9074,9 +9074,10 @@ window.jQuery = window.$ = jQuery;
     		    // get all the numbers
     		    num = bar.data('number'),
     		    // math to convert numbers to percentage and round to closest number (no decimal)
-    		    percentage = Math.round((num / highestNumber) * 100);
+    		    percentage = Math.round((num / highestNumber) * 100) + '%';
     		// Time to assign and animate the bar widths
-    		$(this).animate({ 'width' : percentage + '%' }, settings.speed);
+    		$(this).animate({ 'width' : percentage }, settings.speed);
+    		$(this).next('.number').animate({ 'left' : percentage }, settings.speed);
     	});
 	  });
 
