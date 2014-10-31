@@ -14,8 +14,8 @@ jQuery will then cycle through all the `selector`'s and find the one with the hi
 
 Include jQuery and required files
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="build/js/application.min.js"></script>
+<script src="build/js/jquery.min.js"></script>
+<script src="build/js/jquery.horizBarChart.min.js"></script>
 ```
 
 ### Markup:
