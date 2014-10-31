@@ -9,7 +9,6 @@ javascripts_dir = "build/js"
 # output_style = :expanded or :nested or :compact or :compressed
 # Use :expanded for development and :compressed for production
 output_style = :compressed
-sourcemap = true
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 relative_assets = true

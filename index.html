@@ -8,9 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 
     <link href="build/css/style.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="build/css/horizBarChart.css" media="all" rel="stylesheet" type="text/css" />
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="build/js/application.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="build/js/jquery.min.js"></script>
+    <script src="build/js/jquery.horizBarChart.min.js"></script>
 
     <script>
       $(document).ready(function(){
@@ -46,17 +47,31 @@
 
       <section>
 
+
+
+        <h2>Use</h2>
+
+        <h3>Required Files</h3>
+
+        <p>Include jQuery and required files</p>
+
+        <pre>
+          <code>
+            &lt;script src="build/js/jquery.min.js"&gt;&lt;/script&gt;
+            &lt;script src="build/js/application.min.js"&gt;&lt;/script&gt;
+          </code>
+        </pre>
+
+
+
+        <h3>Markup</h3>
+
         <p>
           The plugin uses the <code>data-number</code> attribute for the graph length.<br/>
           jQuery will then cycle through all the <code>selector</code>'s and find the one with the highest number.<br/>
           That number will be used as 100% base point and make the rest of the bars relative to that number.
         </p>
 
-        <h2>Use</h2>
-
-        <p>Simplest way to use is create the following markup and just call <code>.horizBarChart()</code> on your containing element.</p>
-
-        <h3>Markup</h3>
         <pre>
           <code>
             &lt;ul class="chart"&gt;
@@ -66,7 +81,10 @@
           </code>
         </pre>
 
+
+
         <h3>Code</h3>
+        <p>Simplest way to use is create the following markup and just call <code>.horizBarChart()</code> on your containing element.</p>
         <pre>
           <code>
             $('.chart').horizBarChart();
@@ -75,9 +93,13 @@
 
         <hr/>
 
+
+
+
+
         <h2>Options</h2>
 
-        <p>You can also adjust the plugin using the following options:</p>
+        <p>The following are the available options and default values.</p>
 
         <pre><code>
           $('.chart').horizBarChart({
@@ -87,6 +109,10 @@
         </code></pre>
 
         <hr/>
+
+
+
+
 
         <h2>Example</h2>
 
@@ -105,6 +131,8 @@
         <!-- Code End -->
 
       </section>
+
+
 
       <footer>
         <hr/>

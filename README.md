@@ -10,11 +10,21 @@ jQuery will then cycle through all the `selector`'s and find the one with the hi
 
 ## Use
 
-Simplest way to use is create the following markup and just call <code>.horizBarChart()</code> on your containing element.
+### Required files
+
+Include jQuery and required files
+```html
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="build/js/application.min.js"></script>
+```
 
 ### Markup:
 
-```html
+The plugin uses the <code>data-number</code> attribute for the graph length.<br/>
+jQuery will then cycle through all the <code>selector</code>'s and find the one with the highest number.<br/>
+That number will be used as 100% base point and make the rest of the bars relative to that number.
+
+```
 <ul class="chart">
 	<li><span class="bar" data-number="38000"></span><span class="number">38,000</span></li>
 	<li><span class="bar" data-number="134000"></span><span class="number">134,000</span></li>
@@ -23,13 +33,15 @@ Simplest way to use is create the following markup and just call <code>.horizBar
 
 ### Code:
 
+Simplest way to use is create the following markup and just call `.horizBarChart()` on your containing element.
+
 ```javascript
 $('.chart').horizBarChart();
 ```
 
-## Options
+## Options &amp; Defaults
 
-You can also adjust the plugin using the following options:
+The following are the available options and default values.
 
 ```javascript
 $('.chart').horizBarChart({

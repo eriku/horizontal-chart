@@ -8,27 +8,17 @@ module.exports = function(grunt) {
     concat: {
       build: {
         src: [
-          'src/js/jquery.min.js',
           'src/js/horizBarChart.js'
         ],
-        dest: 'build/js/application.js'
+        dest: 'build/js/jquery.horizBarChart.js'
       },
     },
     uglify: {
         build: {
           files: [
-           { 'build/js/application.min.js': ['<%= concat.build.dest %>'] }
+           { 'build/js/jquery.horizBarChart.min.js': ['<%= concat.build.dest %>'] }
           ]
         },
-    },
-    compress: {
-      main: {
-        options: {
-          mode: 'gzip'
-        },
-        expand: true,
-        src: ['build/js/*.js']
-      }
     },
 
     jshint: {
@@ -55,6 +45,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['concat', 'uglify', 'compress']);
+  grunt.registerTask('default', ['concat', 'uglify']);
 
 };
