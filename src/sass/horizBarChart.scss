@@ -2,105 +2,98 @@ $breakpoint_mobile: 480px;
 
 $color_alt: #aaa;
 
-.clearfix:after {
-   content: " "; /* Older browser do not support empty content */
-   visibility: hidden;
-   display: block;
-   height: 0;
-   clear: both;
-}
+@mixin clearfix {
+  zoom: 1;  // Triggering "hasLayout" in IE
+  &:after {
+    clear: both;
+    content: '.';
+    display: block;
+    height: 0;
+    visibility: hidden;
+  } // after
+} // @mixin clearfix
 
-.chart-horiz {
+.chart {
+  @include clearfix;
+  width: 90%;
 
-  .chart {
-    width: 90%;
+  li {
+    display: block;
+    height: 23px;
+    margin-top: 3px;
+    position: relative;
 
-    li {
-      display: block;
-      height: 23px;
-      margin-top: 3px;
-      position: relative;
+    &:before {
+      color: #fff;
+      content: attr(title);
+      left: 5px;
+      position: absolute;
+    } // &:before
 
+    &.title {
       &:before {
-        color: #fff;
-        content: attr(title);
-        left: 5px;
-        position: absolute;
-      }
-
-      &.title {
-        &:before {
-          color: black;
-          font-weight: bold;
-          left: 0;
-        }
-      }
-
-      &:first-child {
-        margin-top: 0;
-      }
-
-      .bar {
-        background: black;
-        height: 100%;
-      }
-
-      .number {
         color: black;
-        font-size:18px;
         font-weight: bold;
-        padding-left: 5px;
-        position: absolute;
-        top: -2px;
-      }
+        left: 0;
+      } // %:before
+    } // &.title
 
-      &.past {
-        .bar {
-          background: $color_alt;
-        }
-        .number {
-          color: $color_alt;
-        }
-      }
-    }
-  }
-}
+    &:first-child {
+      margin-top: 0;
+    } // &:first-child
+
+    .bar {
+      background: black;
+      height: 100%;
+    } // .bar
+
+    .number {
+      color: black;
+      font-size:18px;
+      font-weight: bold;
+      padding-left: 5px;
+      position: absolute;
+      top: -2px;
+    } // .number
+
+    &.past {
+      .bar {
+        background: $color_alt;
+      } // .bar
+      .number {
+        color: $color_alt;
+      } // .number
+    } // &.past
+  } // li
+} // .chart
+
 
 
 
 @media screen and (max-width: $breakpoint_mobile) {
-  .chart-horiz {
-
-    .chart {
-
-      li {
-        height: auto;
-
+  .chart {
+    li {
+      height: auto;
+      &:before {
+        color: black;
+        display: block;
+        left: 0;
+        position: relative;
+      }
+      &.title {
         &:before {
-          color: black;
-          display: block;
-          left: 0;
-          position: relative;
+          border-bottom: 1px solid;
         }
-
-        &.title {
-
-          &:before {
-            border-bottom: 1px solid;
-          }
-        }
-
-        .bar {
-          height: 23px;
-        }
-
-        .number {
-          display: block;
-          left: 0 !important;
-          padding-left: 0;
-          position: relative;
-          top: -8px;
-        }
+      }
+      .bar {
+        height: 23px;
+      }
+      .number {
+        display: block;
+        left: 0 !important;
+        padding-left: 0;
+        position: relative;
+        top: -8px;
       }
     }
   }
